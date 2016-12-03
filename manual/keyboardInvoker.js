@@ -12,7 +12,7 @@ class KeyboardInvoker {
   listen() {
     process.stdin.on('keypress', (ch, key) => {
       this.execute(key.name);
-    })
+    });
   }
 
   execute(commandName) {

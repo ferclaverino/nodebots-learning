@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node main.js",
+    "eslint": "eslint \"*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -11,5 +12,8 @@
   "dependencies": {
     "johnny-five": "^0.10.6",
     "keypress": "^0.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.11.1"
   }
 }
