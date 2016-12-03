@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ferclaverino/nodebots-learning.svg?branch=master)](https://travis-ci.org/ferclaverino/nodebots-learning)
 # Un nodebot para aprender sobre diseño
 
 La excusa es armar de manera incremental un auto (node bot) para aprender sobre principios y patrones de diseño
