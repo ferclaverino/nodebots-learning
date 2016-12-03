@@ -1,0 +1,15 @@
+{
+  "name": "car4learning-design",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "johnny-five": "^0.10.6",
+    "keypress": "^0.2.1"
+  }
+}
