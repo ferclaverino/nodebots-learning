@@ -6,7 +6,7 @@ class Invoker {
   }
 
   start(commandName) {
-    this.commands[commandName].start();
+    if (this.commands[commandName]) this.commands[commandName].start();
   }
 
   stop(commandName) {
