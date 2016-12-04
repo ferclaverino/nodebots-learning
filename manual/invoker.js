@@ -10,7 +10,7 @@ class Invoker {
   }
 
   stop(commandName) {
-    this.commands[commandName].stop();
+    if (this.commands[commandName]) this.commands[commandName].stop();
   }
 }
 
