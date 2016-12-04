@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node manual/main.js",
-    "test": "npm run eslint",
+    "test": "npm run test:unit && npm run test:eslint",
     "test:eslint": "eslint \"**/*.js\"",
     "test:unit": "jasmine",
     "test:unit:watch": "chokidar 'spec/*.js' -c 'npm run test:unit'"
