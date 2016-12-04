@@ -5,12 +5,16 @@ class Invoker {
     this.commands = commands;
   }
 
+  hasCommand(commandName) {
+    return this.commands[commandName] ? true : false;
+  }
+
   start(commandName) {
-    if (this.commands[commandName]) this.commands[commandName].start();
+    if (this.hasCommand(commandName)) this.commands[commandName].start();
   }
 
   stop(commandName) {
-    if (this.commands[commandName]) this.commands[commandName].stop();
+    if (this.hasCommand(commandName)) this.commands[commandName].stop();
   }
 }
 
