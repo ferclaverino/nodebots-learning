@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "eslint": "eslint \"*.js\"",
     "start": "node manual/main.js",
-    "test": "npm run eslint"
+    "test": "npm run eslint",
+    "test:eslint": "eslint \"**/*.js\"",
+    "test:unit": "jasmine",
+    "test:unit:watch": "chokidar 'spec/*.js' -c 'npm run test:unit'"
   },
   "author": "",
   "license": "MIT",
@@ -14,6 +16,9 @@
     "keypress": "^0.2.1"
   },
   "devDependencies": {
-    "eslint": "^3.11.1"
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^3.11.1",
+    "eslint-plugin-jasmine": "^2.2.0",
+    "jasmine": "^2.5.2"
   }
 }
