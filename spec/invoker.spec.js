@@ -39,5 +39,13 @@ describe('invoker', ()=> {
       });
     });
 
+    describe('when stop down', ()=> {
+      beforeEach(() => invoker.stop('down'));
+      it('then commands are not called', ()=> {
+        expect(upCommand.start).not.toHaveBeenCalled();
+        expect(upCommand.stop).not.toHaveBeenCalled();
+      });
+    });
+
   });
 });
