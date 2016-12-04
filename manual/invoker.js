@@ -1,7 +1,12 @@
 
 class Invoker {
-  start() {
 
+  constructor(commands) {
+    this.commands = commands;
+  }
+
+  start(commandName) {
+    this.commands[commandName].start();
   }
 }
 
