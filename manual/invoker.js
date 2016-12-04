@@ -9,8 +9,8 @@ class Invoker {
     this.commands[commandName].start();
   }
 
-  stop() {
-    
+  stop(commandName) {
+    this.commands[commandName].stop();
   }
 }
 

@@ -8,10 +8,10 @@ describe('invoker', ()=> {
     beforeEach(() => {
       upCommand = {
         start: () => {},
-        end: () => {}
+        stop: () => {}
       };
       spyOn(upCommand, 'start');
-      spyOn(upCommand, 'end');
+      spyOn(upCommand, 'stop');
       invoker = new Invoker({
         up: upCommand
       });
@@ -28,6 +28,14 @@ describe('invoker', ()=> {
       beforeEach(() => invoker.stop('up'));
       it('then stop up command is called', ()=> {
         expect(upCommand.stop).toHaveBeenCalled();
+      });
+    });
+
+    describe('when start down', ()=> {
+      beforeEach(() => invoker.start('down'));
+      it('then commands are not called', ()=> {
+        expect(upCommand.start).not.toHaveBeenCalled();
+        expect(upCommand.stop).not.toHaveBeenCalled();
       });
     });
 
