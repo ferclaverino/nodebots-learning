@@ -18,6 +18,6 @@ const commands = {
     console.log('space');
   }
 };
-const keyboardInvoker = new KeyboardInvoker(commands);
+var keyboardInvoker = new KeyboardInvoker(commands);
 
 keyboardInvoker.listen();
