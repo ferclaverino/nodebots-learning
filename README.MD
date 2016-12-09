@@ -5,7 +5,7 @@ La excusa es armar de manera incremental un auto (node bot) para aprender sobre 
 
 ## Hoja de ruta
 
-### [1. Control manual](manual/)
+### [1. Control manual](car/)
 Sin inteligencia
 
 ### 2. Semi autónomo

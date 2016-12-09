@@ -2,8 +2,9 @@
   "name": "nodebots-learning",
   "version": "0.0.1",
   "description": "",
+  "repository": "https://github.com/ferclaverino/nodebots-learning",
   "scripts": {
-    "start": "node manual/main.js",
+    "start": "node car/main.js",
     "test": "npm run test:unit && npm run test:eslint",
     "test:eslint": "eslint \"**/*.js\"",
     "test:unit": "jasmine JASMINE_CONFIG_PATH=./jasmine.json",
