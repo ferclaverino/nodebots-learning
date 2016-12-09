@@ -1,4 +1,5 @@
 const { Board, Motor } = require('johnny-five');
+const Invoker = require('./invoker.js');
 const KeyboardInvoker = require('./keyboardInvoker.js');
 
 var board = new Board({
@@ -15,35 +16,48 @@ board.on('ready', () => {
   const speed = 255 * 0.8;
 
   const commands = {
-    'q': () => process.exit(),
-    'up': () => {
-      motorL.forward(speed);
-      motorR.forward(speed);
+    'q': {
+      start: () => process.exit()
     },
-    'down': () => {
-      motorL.reverse(speed);
-      motorR.reverse(speed);
+    'up': {
+      start: () => {
+        motorL.forward(speed);
+        motorR.forward(speed);
+      }
     },
-    'left': () => {
-      motorL.reverse(speed);
-      motorR.forward(speed);
+    'down': {
+      start: () => {
+        motorL.reverse(speed);
+        motorR.reverse(speed);
+      }
     },
-    'right': () => {
-      motorL.forward(speed);
-      motorR.reverse(speed);
+    'left': {
+      start: () => {
+        motorL.reverse(speed);
+        motorR.forward(speed);
+      }
     },
-    'space': () => {
-      // stop
-      motorL.stop();
-      motorR.stop();
+    'right': {
+      start: () => {
+        motorL.forward(speed);
+        motorR.reverse(speed);
+      }
+    },
+    'space': {
+      start: () => {
+        // stop
+        motorL.stop();
+        motorR.stop();
+      }
     }
   };
-  var keyboardInvoker = new KeyboardInvoker(commands);
+  var invoker = new Invoker(commands);
+  var keyboardInvoker = new KeyboardInvoker(invoker);
 
   keyboardInvoker.listen();
 
   board.on('exit', () => {
-    keyboardInvoker.execute('space');
+    invoker.execute('space');
   });
 
 });

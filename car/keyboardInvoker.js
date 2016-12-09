@@ -1,8 +1,8 @@
 const keypress = require('keypress');
 
 class KeyboardInvoker {
-  constructor(commands) {
-    this.commands = commands;
+  constructor(invoker) {
+    this.invoker = invoker;
     keypress(process.stdin);
     process.stdin.resume();
     process.stdin.setEncoding('utf8');
@@ -11,14 +11,8 @@ class KeyboardInvoker {
 
   listen() {
     process.stdin.on('keypress', (ch, key) => {
-      this.execute(key.name);
+      this.invoker.start(key.name);
     });
-  }
-
-  execute(commandName) {
-    if (this.commands[commandName]) {
-      this.commands[commandName]();
-    }
   }
 
 }

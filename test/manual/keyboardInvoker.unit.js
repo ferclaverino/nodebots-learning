@@ -1,23 +1,27 @@
+const Invoker = require('../../car/invoker');
 const KeyboardInvoker = require('../../car/keyboardInvoker');
 
 const commands = {
-  'q': () => process.exit(),
-  'up': () => {
-    console.log('up');
+  'q': {
+    start: () => process.exit()
   },
-  'down': () => {
-    console.log('down');
+  'up': {
+    start: () => console.log('start up')
   },
-  'left': () => {
-    console.log('left');
+  'down': {
+    start: () => console.log('start down')
   },
-  'right': () => {
-    console.log('right');
+  'left': {
+    start: () => console.log('start left')
   },
-  'space': () => {
-    console.log('space');
+  'right': {
+    start: () => console.log('start right')
+  },
+  'space': {
+    start: () => console.log('start space')
   }
 };
-var keyboardInvoker = new KeyboardInvoker(commands);
+var invoker = new Invoker(commands);
+var keyboardInvoker = new KeyboardInvoker(invoker);
 
 keyboardInvoker.listen();
