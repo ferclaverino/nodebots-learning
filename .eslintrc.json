@@ -22,6 +22,10 @@
             "error",
             "single"
         ],
+        "no-console": [
+            "error",
+            { "allow": ["log", "error"] }
+        ],
         "semi": [
             "error",
             "always"
