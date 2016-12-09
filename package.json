@@ -6,7 +6,7 @@
     "start": "node manual/main.js",
     "test": "npm run test:unit && npm run test:eslint",
     "test:eslint": "eslint \"**/*.js\"",
-    "test:unit": "jasmine",
+    "test:unit": "jasmine JASMINE_CONFIG_PATH=./jasmine.json",
     "test:unit:watch": "chokidar 'spec/*.js' -c 'npm run test:unit'"
   },
   "author": "",
