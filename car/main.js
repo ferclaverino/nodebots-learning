@@ -16,43 +16,49 @@ board.on('ready', () => {
   const speed = 255 * 0.8;
 
   const commands = {
-    'q': {
-      start: () => process.exit()
-    },
     'up': {
       start: () => {
         motorL.forward(speed);
         motorR.forward(speed);
+      },
+      stop: () => {
+        motorL.stop();
+        motorR.stop();
       }
     },
     'down': {
       start: () => {
         motorL.reverse(speed);
         motorR.reverse(speed);
+      },
+      stop: () => {
+        motorL.stop();
+        motorR.stop();
       }
     },
     'left': {
       start: () => {
         motorL.reverse(speed);
         motorR.forward(speed);
+      },
+      stop: () => {
+        motorL.stop();
+        motorR.stop();
       }
     },
     'right': {
       start: () => {
         motorL.forward(speed);
         motorR.reverse(speed);
-      }
-    },
-    'space': {
-      start: () => {
-        // stop
+      },
+      stop: () => {
         motorL.stop();
         motorR.stop();
       }
     }
   };
   var invoker = new Invoker(commands);
-  var keyboardInvoker = new KeyboardInvoker(invoker);
+  var keyboardInvoker = new KeyboardInvoker(invoker, 'event6');
 
   keyboardInvoker.listen();
 
