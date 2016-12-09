@@ -28,11 +28,11 @@ class KeyboardInvoker {
 
   listen() {
     this.keyboard.on('keydown', (key) => {
-      this.executeCommand('keydown', key, (command) => this.invoker.start(command))
+      this.executeCommand('keydown', key, (command) => this.invoker.start(command));
     });
 
     this.keyboard.on('keyup', (key) => {
-      this.executeCommand('keyup', key, (command) => this.invoker.stop(command))
+      this.executeCommand('keyup', key, (command) => this.invoker.stop(command));
     });
   }
 
