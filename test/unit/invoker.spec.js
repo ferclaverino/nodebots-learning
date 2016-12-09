@@ -1,4 +1,4 @@
-const Invoker = require('../../manual/invoker.js');
+const Invoker = require('../../car/invoker.js');
 
 describe('invoker', ()=> {
 
