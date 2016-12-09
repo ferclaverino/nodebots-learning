@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "johnny-five": "^0.10.6",
-    "node-keyboard": "git+ssh://git@github.com/ferclaverino/node-keyboard.git"
+    "node-keyboard": "git+https://github.com/ferclaverino/node-keyboard.git"
   },
   "devDependencies": {
     "chokidar-cli": "^1.2.0",
