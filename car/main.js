@@ -63,7 +63,7 @@ board.on('ready', () => {
   keyboardInvoker.listen();
 
   board.on('exit', () => {
-    invoker.execute('space');
+    invoker.stop('up');
   });
 
 });
