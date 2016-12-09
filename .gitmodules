@@ -1,3 +1,0 @@
-[submodule "lib/node-keyboard"]
-	path = lib/node-keyboard
-	url = git@github.com:Bornholm/node-keyboard.git

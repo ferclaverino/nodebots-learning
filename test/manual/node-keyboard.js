@@ -1,4 +1,4 @@
-const Keyboard = require('../../lib/node-keyboard/keyboard.js');
+const Keyboard = require('node-keyboard');
 
 const k = new Keyboard('event6'); // 'event6' is the file corresponding to my keyboard in /dev/input/
 k.on('keyup', console.log);
