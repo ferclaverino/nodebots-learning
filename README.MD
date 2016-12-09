@@ -13,3 +13,11 @@ Con un poco de inteligencia
 
 ### 3. Autónomo
 El robot toma todas las decisiones
+
+## Setup
+
+### Pair bluetooth
+
+```
+sudo rfcomm bind /dev/rfcomm0 98:D3:31:40:41:50
+```
