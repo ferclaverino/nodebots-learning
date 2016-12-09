@@ -16,8 +16,10 @@ El robot toma todas las decisiones
 
 ## Setup
 
-### Pair bluetooth
+Pair bluetooth:
 
-```
-sudo rfcomm bind /dev/rfcomm0 98:D3:31:40:41:50
-```
+`sudo rfcomm bind /dev/rfcomm0 98:D3:31:40:41:50`
+
+Get keyboard event path:
+
+`cat /proc/bus/input/devices`
