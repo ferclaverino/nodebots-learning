@@ -2,9 +2,6 @@ const Invoker = require('../../car/invoker');
 const KeyboardInvoker = require('../../car/keyboardInvoker');
 
 const commands = {
-  'q': {
-    start: () => process.exit()
-  },
   'up': {
     start: () => console.log('start up')
   },
@@ -22,6 +19,6 @@ const commands = {
   }
 };
 var invoker = new Invoker(commands);
-var keyboardInvoker = new KeyboardInvoker(invoker);
+var keyboardInvoker = new KeyboardInvoker(invoker, 'event6');
 
 keyboardInvoker.listen();

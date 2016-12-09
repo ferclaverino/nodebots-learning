@@ -1,17 +1,15 @@
-const keypress = require('keypress');
+const Keyboard = require('node-keyboard');
 
 class KeyboardInvoker {
-  constructor(invoker) {
+  constructor(invoker, event) {
+    this.keyboard = new Keyboard(event);
     this.invoker = invoker;
-    keypress(process.stdin);
-    process.stdin.resume();
-    process.stdin.setEncoding('utf8');
-    process.stdin.setRawMode(true);
   }
 
   listen() {
-    process.stdin.on('keypress', (ch, key) => {
-      this.invoker.start(key.name);
+    this.keyboard.on('keypress', (key) => {
+      var keyName = key.keyId.replace('KEY_', '').toLowerCase();
+      this.invoker.start(keyName);
     });
   }
 
