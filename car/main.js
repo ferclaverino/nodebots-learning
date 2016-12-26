@@ -1,6 +1,7 @@
 const { Board, Motor } = require('johnny-five');
 const Invoker = require('./invoker.js');
 const KeyboardInvoker = require('./keyboardInvoker.js');
+const Car = require('./car.js');
 
 var board = new Board({
   port: '/dev/rfcomm0',
@@ -12,48 +13,39 @@ board.on('ready', () => {
   const configs = Motor.SHIELD_CONFIGS.ADAFRUIT_V2;
   var motorL = new Motor(configs.M2);
   var motorR = new Motor(configs.M1);
-  // set 80% speed
-  const speed = 255 * 0.8;
+  var car = new Car(motorL, motorR);
 
   const commands = {
     'up': {
       start: () => {
-        motorL.forward(speed);
-        motorR.forward(speed);
+        car.forward();
       },
       stop: () => {
-        motorL.stop();
-        motorR.stop();
+        car.stop();
       }
     },
     'down': {
       start: () => {
-        motorL.reverse(speed);
-        motorR.reverse(speed);
+        car.reverse();
       },
       stop: () => {
-        motorL.stop();
-        motorR.stop();
+        car.stop();
       }
     },
     'left': {
       start: () => {
-        motorL.reverse(speed);
-        motorR.forward(speed);
+        car.left();
       },
       stop: () => {
-        motorL.stop();
-        motorR.stop();
+        car.stop();
       }
     },
     'right': {
       start: () => {
-        motorL.forward(speed);
-        motorR.reverse(speed);
+        car.right();
       },
       stop: () => {
-        motorL.stop();
-        motorR.stop();
+        car.stop();
       }
     }
   };
