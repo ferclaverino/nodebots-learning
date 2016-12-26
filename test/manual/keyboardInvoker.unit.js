@@ -20,6 +20,6 @@ const commands = {
   }
 };
 var invoker = new Invoker(commands);
-var keyboardInvoker = new KeyboardInvoker(invoker, 'event6');
+var keyboardInvoker = new KeyboardInvoker(invoker, 'event5');
 
 keyboardInvoker.listen();
